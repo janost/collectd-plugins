@@ -1,0 +1,1 @@
+tcplat         droprate:GAUGE:0:100, mean:GAUGE:0:U, stddev:GAUGE:0:U, min:GAUGE:0:U, max:GAUGE:0:U, p99:GAUGE:0:U, p95:GAUGE:0:U, p90:GAUGE:0:U
