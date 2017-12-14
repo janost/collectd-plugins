@@ -19,5 +19,27 @@ Example configuration:
 </Plugin>
 ```
 
+### compal
+Reports downstream/upstream power and downstream SNR of your Compal CH7465LG cable modem.
+Code is based on [compal_CH7465LG_py](https://github.com/ties/compal_CH7465LG_py).
+
+Example configuration:
+```
+<Plugin python>
+    ModulePath "/path/to/the/plugin"
+    LogTraces false
+    Interactive false
+    Import "compal"
+
+    <Module compal>
+        IP "192.168.100.1"
+        Password "supersecret"
+    </Module>
+</Plugin>
+```
+
+### Contributions
+Contributions are welcome.
+
 ### License
 WTFPL
