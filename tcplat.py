@@ -56,7 +56,6 @@ class TCPLatencyMonitor(threading.Thread):
                 self.success += 1
                 self.latency.append(conn_time * 1000)
             except Exception, e:
-                collectd.info(str(e))
                 self.failed += 1
 
             sleep_time = self.interval / 1000.0 - conn_time
