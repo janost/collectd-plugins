@@ -42,7 +42,6 @@ class ExPingTcp(threading.Thread):
         return (r_latency, r_success, r_failed)
 
     def run(self):
-        target_str = '%s:%i' % (self.target[0], self.target[1])
         pingr = IP(dst=self.target[0])/TCP(dport=self.target[1], flags="S")
         while not self.shutdown_flag.is_set():
             start_time = timeit.default_timer()
@@ -58,7 +57,6 @@ class ExPingTcp(threading.Thread):
                 else:
                     self.failed += 1
             except Exception, e:
-                log_warn('Failure while pinging %s: %s' % (target_str, e))
                 self.failed += 1
 
             sleep_time = (self.interval / 1000.0) - (timeit.default_timer() - start_time)

@@ -57,7 +57,6 @@ class ExPingIcmp(threading.Thread):
                 else:
                     self.failed += 1
             except Exception, e:
-                log_warn('Failure while pinging %s: %s' % (self.target, e))
                 self.failed += 1
 
             sleep_time = (self.interval / 1000.0) - (timeit.default_timer() - start_time)
